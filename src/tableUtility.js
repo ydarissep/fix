@@ -123,6 +123,7 @@ function refreshLocationsTables(){
 
 
 function lazyLoading(reset = false){
+    /*
     const activeTable = document.getElementsByClassName("activeTable")[0]
     if(activeTable)
     {
@@ -152,6 +153,7 @@ function lazyLoading(reset = false){
         }
         refreshLocationsTables()
     }
+    */
 }
 
 
