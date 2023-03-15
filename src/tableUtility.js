@@ -102,7 +102,7 @@ function filterTableInput(input, obj, keyArray){
 function refreshLocationsTables(){
     if(!locationsTable.classList.contains("hide")){
         const locationsTables = locationsTableTbody.children
-        for(let i = 0; i < locationsTables.length; i++){
+        for(let i = 0, k = locationsTables.length; i < k; i++){
             locationsTables[i].classList.add("hide")
             const tableTbody = locationsTables[i].children[1]
             for(let j = 0; j < tableTbody.children.length; j++){
@@ -123,37 +123,35 @@ function refreshLocationsTables(){
 
 
 function lazyLoading(reset = false){
-    /*
     const activeTable = document.getElementsByClassName("activeTable")[0]
     if(activeTable)
     {
         const rows = activeTable.querySelectorAll("tbody > tr")
         let count = 0
-        for(let i = 0; i < rows.length; i++){
+        for(const row of rows){
             if(reset){
                 if(count <= 75){
-                    if(!rows[i].classList.contains("hide") && !rows[i].className.includes("hideFilter") && !rows[i].className.includes("hideChanged")){
-                        rows[i].classList.remove("hideTemp")
+                    if(!row.classList.contains("hide") && !row.className.includes("hideFilter") && !row.className.includes("hideChanged")){
+                        row.classList.remove("hideTemp")
                         count++
                     }
                 }
                 else
-                    rows[i].classList.add("hideTemp")
+                    row.classList.add("hideTemp")
             }
             else{
-                if(!rows[i].classList.contains("hide") && !rows[i].className.includes("hideFilter") && !rows[i].className.includes("hideChanged")){
-                    if(rows[i].classList.contains("hideTemp")){
+                if(!row.classList.contains("hide") && !row.className.includes("hideFilter") && !row.className.includes("hideChanged")){
+                    if(row.classList.contains("hideTemp")){
                         count++
-                        rows[i].classList.remove("hideTemp")
+                        row.classList.remove("hideTemp")
                     }
                 }
                 if(count >= 75)
                     break
             }
         }
-        refreshLocationsTables()
+        //refreshLocationsTables()
     }
-    */
 }
 
 
